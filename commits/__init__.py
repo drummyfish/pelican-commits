@@ -11,6 +11,5 @@ __maintainer__ = "drummyfish"
 __email__ = "tastyfish@seznam.cz"
 __status__ = "Stable"
 __license__ = "public domain"
-__copyright__ = "Copyright 2017"
 
 from github_commits import register
