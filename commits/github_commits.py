@@ -38,7 +38,7 @@ class Commits(object):
       logger.warning("unable to open " + url)
       return
 
-    self.content =  json.loads(response)
+    self.content = json.loads(response)
 
   def process(self):
     if self.content is None:
@@ -61,10 +61,10 @@ def initialize(gen):
   if not CONFIG_KEY in gen.settings.keys():
     logger.warning(CONFIG_KEY + " not set")
   else:
-    gen.plugin_instance = Commits(gen)
+    gen.commit_plugin_instance = Commits(gen)
 
 def fetch(gen, metadata):
-  gen.context["commits"] = gen.plugin_instance.process()
+  gen.context["commits"] = gen.commit_plugin_instance.process()
 
 def register():
   signals.article_generator_init.connect(initialize)
